@@ -1,0 +1,16 @@
+<section id="dashboard-view" class="mainbar">
+  <section class="matter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <h3 class="m-b font-thin">Recently played</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-1 col-lg-1" ng-repeat="album in vm.albums">
+        	<album id="{{album.coverArt}}", artist="{{album.artist}}", title="{{album.title}}"></album>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

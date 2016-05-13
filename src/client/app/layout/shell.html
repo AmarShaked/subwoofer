@@ -1,0 +1,13 @@
+<div ng-controller="ShellController as vm">
+  <header ng-if="isConnected" class="clearfix">
+    <ht-top-nav navline="vm.navline"></ht-top-nav>
+  </header>
+  <section id="content" class="content">
+    <div ng-if="isConnected" ng-include="'app/layout/sidebar.html'"></div>
+
+    <div ui-view class="shuffle-animation"></div>
+  </section>
+  <footer ng-include="'app/layout/footer.html'">
+  	
+  </footer>
+</div>
