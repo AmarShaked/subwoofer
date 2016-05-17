@@ -5,11 +5,11 @@
     .module('app.login')
     .service('LoginHelper', LoginHelper);
 
-  LoginHelper.$inject = ['ssHttp', 'config', '$rootScope', 
+  LoginHelper.$inject = ['ssHttp', 'config', '$rootScope',
                         'SystemApi', 'logger', '$state',
                         '$localStorage'];
   /* @ngInject */
-  function LoginHelper(ssHttp, config, $rootScope, 
+  function LoginHelper(ssHttp, config, $rootScope,
                        SystemApi, logger, $state,
                        $localStorage) {
 
@@ -22,29 +22,29 @@
     function login(username, password, site) {
 
       $rootScope.site = site;
-      $rootScope.subsonicParams = {u: username, 
+      $rootScope.subsonicParams = {u: username,
                                    p:'enc:' + hexEncode(password),
                                    c: config.appTitle,
                                    v: config.apiVersion,
-                                   f: 'json' }
+                                   f: 'json' };
 
       return SystemApi.ping().then(function(res) {
-          $localStorage.subsonicParams = $rootScope.subsonicParams;
-          $localStorage.subsonicSite = $rootScope.site;
-          $state.go('home');
+        $localStorage.subsonicParams = $rootScope.subsonicParams;
+        $localStorage.subsonicSite = $rootScope.site;
+        $state.go('home');
       });
     }
 
-    function hexEncode(str){
-        var hex, i;
+    function hexEncode(str) {
+      var hex, i;
 
-        var result = "";
-        for (i=0; i<str.length; i++) {
-            hex = str.charCodeAt(i).toString(16);
-            result += (hex).slice(-4);
-        }
+      var result = '';
+      for (i = 0; i < str.length; i++) {
+        hex = str.charCodeAt(i).toString(16);
+        result += (hex).slice(-4);
+      }
 
-        return result
+      return result;
     }
 
     function isAuthenticated() {

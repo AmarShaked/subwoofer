@@ -21,30 +21,29 @@
   core.value('config', config);
 
   core.config(['$httpProvider', function($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+      $httpProvider.defaults.useXDomain = true;
+      delete $httpProvider.defaults.headers.common['X-Requested-With'];
     }
   ]);
 
   core.run(function($rootScope, LoginHelper, $state) {
 
+    $rootScope.$on('$stateChangeStart', function(e, toState  , toParams,
+                                                  fromState, fromParams) {
 
-    $rootScope.$on( '$stateChangeStart', function(e, toState  , toParams
-                                                   , fromState, fromParams) {
+      var isLogin = toState.name === 'login';
 
-        var isLogin = toState.name === "login";
+      if (isLogin) {
+        return; // no need to redirect
+      }
 
-        if(isLogin){
-           return; // no need to redirect 
-        }
+      var isConnected = LoginHelper.isAuthenticated();
 
-        var isConnected = LoginHelper.isAuthenticated();
-
-        if(!isConnected) {
-            e.preventDefault(); // stop current execution
-            $state.go('login'); // go to login
-        }
+      if (!isConnected) {
+        e.preventDefault(); // stop current execution
+        $state.go('login'); // go to login
+      }
     });
-});
+  });
 
 })();

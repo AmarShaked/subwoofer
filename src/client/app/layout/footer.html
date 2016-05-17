@@ -1,16 +1,19 @@
 <div class="app-footer">
-	<videogular vg-theme="controller.config.theme.url" class="videogular-container audio">
-        <vg-media vg-src="controller.config.sources" vg-type="audio"></vg-media>
+	<videogular class="videogular-container audio">
+        <vg-media vg-src="vm.sources" vg-type="audio"></vg-media>
 
         <vg-controls>
+             <vg-button><i class="fa fa-backward"></i></vg-button>
             <vg-play-pause-button></vg-play-pause-button>
-            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+             <vg-button><i class="fa fa-forward"></i></vg-button>
             <vg-scrub-bar>
+				<vg-title class="hidden-xs">אורות גבוהים</vg-title>
                 <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
             </vg-scrub-bar>
-            <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
             <vg-volume>
                 <vg-mute-button></vg-mute-button>
+                <vg-volume-bar></vg-volume-bar>
             </vg-volume>
         </vg-controls>
     </videogular>

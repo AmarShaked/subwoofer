@@ -12,17 +12,35 @@
 
     activate();
 
-    vm.albums = [];
+    vm.recent = [];
+    vm.nowPlaying = [];
+    vm.newest = [];
 
     function activate() {
-      getAlbums();
+      getRecentAlbums();
+      getNewAlbums();
+      getNowPlaying();
     }
 
-    function getAlbums() {
+    function getRecentAlbums() {
       AlbumApi.getAlbumList('recent').then(function(albums) {
-        vm.albums = albums;
-        return vm.albums;
-      })
+        vm.recent = albums;
+        return vm.recent;
+      });
+    }
+
+    function getNewAlbums() {
+      AlbumApi.getAlbumList('newest').then(function(albums) {
+        vm.newest = albums;
+        return vm.newest;
+      });
+    }
+
+    function getNowPlaying() {
+      AlbumApi.getNowPlaying().then(function(nowPlaying) {
+        vm.nowPlaying = nowPlaying;
+        return vm.nowPlaying;
+      });
     }
   }
 })();

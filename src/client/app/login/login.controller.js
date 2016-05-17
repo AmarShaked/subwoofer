@@ -12,8 +12,8 @@
 
     activate();
 
-    vm.username = '';
-    vm.password = '';
+    vm.username = 'guest';
+    vm.password = 'guest';
     vm.subsonicSite = 'http://demo.subsonic.org';
 
     vm.login = login;
@@ -23,7 +23,7 @@
     }
 
     function login() {
-      LoginHelper.login(vm.username, vm.password, vm.subsonicSite);     
+      LoginHelper.login(vm.username, vm.password, vm.subsonicSite);
     }
 
   }

@@ -7,7 +7,7 @@
 
   album.$inject = ['config', '$rootScope'];
   /* @ngInject */
-  function album(config, $rootScope) {    
+  function album(config, $rootScope) {
     //Usage:
     //<img ht-img-person="{{person.imageSource}}"/>
 
@@ -27,12 +27,12 @@
       restrict: 'EA',
       templateUrl: 'app/widgets/album.html',
       link: function (scope, element, attrs) {
-           scope.u = params.u;
-           scope.p = params.p;
-           scope.c = params.c;
-           scope.v = params.v;
-           scope.site = $rootScope.site;
-        }
+        scope.u = params.u;
+        scope.p = params.p;
+        scope.c = params.c;
+        scope.v = params.v;
+        scope.site = $rootScope.site;
+      }
     };
 
     return directive;

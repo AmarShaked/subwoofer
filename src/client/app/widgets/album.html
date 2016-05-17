@@ -2,11 +2,11 @@
   <div class="pos-rlt">
     <div class="item-overlay bg-black-opacity r r-2x">
       <div class="center text-center m-t-n w-full">
-        <a><i class="fa fa-2x fa-play-circle-o text-white"></i></a>
+        <a><i class="fa fa-2x fa-play text-white"></i></a>
       </div>
     </div>
     <a ui-sref="music.detail" href="#/music/detail">
-      <img src="{{site}}/rest/getCoverArt.view?id={{id}}&u={{u}}&p={{p}}&c={{c}}&v={{v}}&size=300" class="img-full">
+      <img ng-src="{{site}}/rest/getCoverArt.view?id={{id}}&u={{u}}&p={{p}}&c={{c}}&v={{v}}&size=300" class="img-full">
     </a>
   </div>
   <div class="padder">

@@ -5,9 +5,9 @@
     .module('app.layout')
     .controller('ShellController', ShellController);
 
-  ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
+  ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger', '$sce'];
   /* @ngInject */
-  function ShellController($rootScope, $timeout, config, logger) {
+  function ShellController($rootScope, $timeout, config, logger, $sce) {
     var vm = this;
 
     vm.navline = {
@@ -19,5 +19,7 @@
 
     function activate() {
     }
+
+    vm.sources = [];
   }
 })();

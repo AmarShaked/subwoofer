@@ -10,16 +10,16 @@
   function ssHttp($http, config, $rootScope, logger, $q, $localStorage) {
     return function(httpObject)
     {
-      console.log(httpObject)
       $rootScope.site = ($rootScope.site ? $rootScope.site : $localStorage.subsonicSite);
-      $rootScope.subsonicParams = ($rootScope.subsonicParams ? $rootScope.subsonicParams : $localStorage.subsonicParams);
+      $rootScope.subsonicParams = ($rootScope.subsonicParams ?
+                                   $rootScope.subsonicParams : $localStorage.subsonicParams);
 
       var ssurl = $rootScope.site + '/rest' + httpObject.url;
 
       var preConfiguredObject = {url: ssurl,
                                  params: $rootScope.subsonicParams};
 
-      var finalHttpObject = angular.merge( httpObject, preConfiguredObject );
+      var finalHttpObject = angular.merge(httpObject, preConfiguredObject);
 
       return $http(finalHttpObject)
         .then(success)
@@ -36,12 +36,10 @@
       }
 
       function failed(e) {
-        var error = (typeof(e) === 'string' ? e : "Failed to communicate with the server..")
+        var error = (typeof(e) === 'string' ? e : 'Failed to communicate with the server..');
         logger.error(error);
         return $q.reject(error);
-      };
-
-
+      }
     };
   }
 })();

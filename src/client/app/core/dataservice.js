@@ -19,7 +19,7 @@
 
     function getPeople() {
       return $http.get('/api/people')
-        .then(success)
+        .then(success);
 
       function success(response) {
         return response.data;
