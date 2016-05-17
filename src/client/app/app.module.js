@@ -8,7 +8,8 @@
     'app.home',
     'app.layout',
     'app.subsonic',
-    'app.login'
+    'app.login',
+    'app.albums'
   ]);
 
 })();

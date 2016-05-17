@@ -7,8 +7,8 @@
         Your library
       </div>
       <ul class="navi">
-        <li class="darker fade-selection-animation current">
-          <a>
+        <li class="darker fade-selection-animation" ng-class="vm.isCurrent('Home')">
+          <a ui-sref="home">
             <i class="fa fa-home"></i>
             Home
           </a>
@@ -19,8 +19,8 @@
             Artists
           </a>
         </li>
-        <li class="darker fade-selection-animation">
-          <a>
+        <li class="darker fade-selection-animation" ng-class="vm.isCurrent('Albums')">
+          <a ui-sref="albums">
             <i class="fa fa-toggle-right"></i>
             Albums  
           </a>
