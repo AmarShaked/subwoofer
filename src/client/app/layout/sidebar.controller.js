@@ -18,7 +18,9 @@
     function activate() { }
 
     function isCurrent(menuName) {
-      return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
+      if ($state.current.title) {
+        return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
+      }
     }
   }
 })();

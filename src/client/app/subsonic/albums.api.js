@@ -10,13 +10,21 @@
   function AlbumApi(ssHttp) {
     var service = {
       getAlbumList: getAlbumList,
-      getNowPlaying: getNowPlaying
+      getNowPlaying: getNowPlaying,
+      getAlbum: getAlbum
     };
 
-    function getAlbumList(type) {
-      return ssHttp({method: 'GET', url: '/getAlbumList.view', params: {type: type}})
+    function getAlbumList(type, size) {
+      return ssHttp({method: 'GET', url: '/getAlbumList2.view', params: {type: type, size: size}})
         .then(function(res) {
-          return res.albumList.album;
+          return res.albumList2.album;
+        });
+    }
+
+    function getAlbum(id) {
+      return ssHttp({method: 'GET', url: '/getAlbum.view', params: {id: id}})
+        .then(function(res) {
+          return res.album;
         });
     }
 

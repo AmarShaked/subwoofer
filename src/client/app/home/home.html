@@ -10,7 +10,7 @@
       </div>
       <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2" ng-repeat="album in vm.recent">
-        	<album id="{{album.coverArt}}", artist="{{album.artist}}", title="{{album.title}}"></album>
+        	<album id="{{album.coverArt}}", artist="{{album.artist}}", title="{{album.name}}"></album>
         </div>
       </div>
       <div class="row">
@@ -35,7 +35,7 @@
                 </a>
               </div>
               <div class="media-body">
-                <h6 class="media-heading text-orange">{{album.title}}</h6>
+                <h6 class="media-heading text-orange">{{album.name}}</h6>
                 {{album.artist}}
               </div>
             </li>

@@ -3,11 +3,11 @@
 
   angular
     .module('app.widgets')
-    .directive('album', album);
+    .directive('ssimg', ssimg);
 
-  album.$inject = ['config', '$rootScope'];
+  ssimg.$inject = ['config', '$rootScope'];
   /* @ngInject */
-  function album(config, $rootScope) {
+  function ssimg(config, $rootScope) {
     //Usage:
     //<img ht-img-person="{{person.imageSource}}"/>
 
@@ -15,18 +15,17 @@
 
     var directive = {
       scope: {
-        'artist': '@',
-        'title': '@',
+        'size': '@',
         'id': '@',
         'u': '@',
         'p': '@',
-        'albumid': '@',
         'c': '@',
         'v': '@',
         'site': '@'
       },
       restrict: 'EA',
-      templateUrl: 'app/widgets/album.html',
+      template: '<img ng-src="{{site}}/rest/getCoverArt.view?id={{id}}' +
+                '&u={{u}}&p={{p}}&c={{c}}&v={{v}}&size={{size}}">',
       link: function (scope, element, attrs) {
         scope.u = params.u;
         scope.p = params.p;

@@ -23,14 +23,14 @@
     }
 
     function getRecentAlbums() {
-      AlbumApi.getAlbumList('recent').then(function(albums) {
+      AlbumApi.getAlbumList('recent', 12).then(function(albums) {
         vm.recent = albums;
         return vm.recent;
       });
     }
 
     function getNewAlbums() {
-      AlbumApi.getAlbumList('newest').then(function(albums) {
+      AlbumApi.getAlbumList('newest', 5).then(function(albums) {
         vm.newest = albums;
         return vm.newest;
       });
