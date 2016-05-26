@@ -17,21 +17,19 @@
       scope: {
         'size': '@',
         'id': '@',
-        'u': '@',
-        'p': '@',
-        'c': '@',
-        'v': '@',
-        'site': '@'
       },
-      restrict: 'EA',
-      template: '<img ng-src="{{site}}/rest/getCoverArt.view?id={{id}}' +
-                '&u={{u}}&p={{p}}&c={{c}}&v={{v}}&size={{size}}">',
+      restrict: 'A',
       link: function (scope, element, attrs) {
-        scope.u = params.u;
-        scope.p = params.p;
-        scope.c = params.c;
-        scope.v = params.v;
-        scope.site = $rootScope.site;
+        var albumUrl  = $rootScope.site + '/rest/getCoverArt.view?id=' + scope.id +
+                        '&u=' + params.u +
+                        '&p=' + params.p +
+                        '&c=' + params.c +
+                        '&v=' + params.v +
+                        '&size=' + scope.size
+
+        element.on('load', function() {
+          element.attr('src', albumUrl)
+        });
       }
     };
 

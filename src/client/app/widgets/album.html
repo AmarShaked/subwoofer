@@ -6,11 +6,11 @@
       </div>
     </div>
     <a ui-sref="music.detail" href="#/music/detail">
-      <img ng-src="{{site}}/rest/getCoverArt.view?id={{id}}&u={{u}}&p={{p}}&c={{c}}&v={{v}}&size=300" class="img-full">
+      <img ssimg src="/images/base-cover-art.png" id="{{id}}", size="{{size}}" class="img-full">
     </a>
   </div>
   <div class="padder">
     <a ui-sref="albums.detail({albumId: albumid})" class="text-ellipsis" href="#/music/detail">{{title}}</a>
     <a ui-sref="music.detail" class="text-ellipsis text-xs text-muted" href="#/music/detail">{{artist}}</a>
-  </div> 
+  </div>
 </div>
