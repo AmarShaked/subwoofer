@@ -11,10 +11,19 @@
     var service = {
       getAlbumList: getAlbumList,
       getNowPlaying: getNowPlaying,
+      getMusicDirectory: getMusicDirectory,
+      getAlbumList2: getAlbumList2,
       getAlbum: getAlbum
     };
 
     function getAlbumList(type, size) {
+      return ssHttp({method: 'GET', url: '/getAlbumList.view', params: {type: type, size: size}})
+        .then(function(res) {
+          return res.albumList.album;
+        });
+    }
+
+    function getAlbumList2(type, size) {
       return ssHttp({method: 'GET', url: '/getAlbumList2.view', params: {type: type, size: size}})
         .then(function(res) {
           return res.albumList2.album;
@@ -25,6 +34,13 @@
       return ssHttp({method: 'GET', url: '/getAlbum.view', params: {id: id}})
         .then(function(res) {
           return res.album;
+        });
+    }
+
+    function getMusicDirectory(id) {
+      return ssHttp({method: 'GET', url: '/getMusicDirectory.view', params: {id: id}})
+        .then(function(res) {
+          return res.directory;
         });
     }
 

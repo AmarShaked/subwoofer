@@ -5,35 +5,19 @@
     .module('app.home')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$q', 'dataservice', 'logger', 'AlbumApi'];
+  HomeController.$inject = ['AlbumApi', 'recent', 'newest', 'cfpLoadingBar'];
   /* @ngInject */
-  function HomeController($q, dataservice, logger, AlbumApi) {
+  function HomeController(AlbumApi, recent, newest, cfpLoadingBar) {
     var vm = this;
 
     activate();
 
-    vm.recent = [];
+    vm.recent = recent;
     vm.nowPlaying = [];
-    vm.newest = [];
+    vm.newest = newest;
 
     function activate() {
-      getRecentAlbums();
-      getNewAlbums();
       getNowPlaying();
-    }
-
-    function getRecentAlbums() {
-      AlbumApi.getAlbumList('recent', 12).then(function(albums) {
-        vm.recent = albums;
-        return vm.recent;
-      });
-    }
-
-    function getNewAlbums() {
-      AlbumApi.getAlbumList('newest', 5).then(function(albums) {
-        vm.newest = albums;
-        return vm.newest;
-      });
     }
 
     function getNowPlaying() {

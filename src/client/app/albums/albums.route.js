@@ -32,7 +32,7 @@
           title: 'Albums',
           resolve: {
             albums: ['AlbumApi', function(AlbumApi) {
-              return AlbumApi.getAlbumList('alphabeticalByName', 500);
+              return AlbumApi.getAlbumList2('alphabeticalByName', 500);
             }]
           }
         }

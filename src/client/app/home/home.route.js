@@ -21,6 +21,14 @@
           controller: 'HomeController',
           controllerAs: 'vm',
           title: 'Home',
+          resolve: {
+            recent: ['AlbumApi', function(AlbumApi) {
+              return AlbumApi.getAlbumList2('recent', 12);
+            }],
+            newest: ['AlbumApi', function(AlbumApi) {
+              return AlbumApi.getAlbumList2('newest', 5);
+            }]
+          },
           settings: {
             nav: 1,
             content: '<i class="fa fa-home"></i> Home'
