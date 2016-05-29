@@ -32,7 +32,8 @@
     "videogular": "^1.4.3",
     "videogular-controls": "^1.4.3",
     "videogular-themes-default": "^1.4.3",
-    "videogular-buffering": "^1.4.3"
+    "videogular-buffering": "^1.4.3",
+    "angular-loading-bar": "^0.9.0"
   },
   "resolutions": {
     "angular": "1.5.3"
