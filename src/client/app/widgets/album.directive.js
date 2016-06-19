@@ -15,7 +15,8 @@
         'title': '@',
         'id': '@',
         'size': '@',
-        'albumid': '@'
+        'albumid': '@',
+        'parentid': '@'
       },
       restrict: 'EA',
       templateUrl: 'app/widgets/album.html',

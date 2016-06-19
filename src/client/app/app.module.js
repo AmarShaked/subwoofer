@@ -9,7 +9,8 @@
     'app.layout',
     'app.subsonic',
     'app.login',
-    'app.albums'
+    'app.albums',
+    'app.utils'
   ]);
 
 })();

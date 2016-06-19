@@ -23,10 +23,10 @@
           title: 'Home',
           resolve: {
             recent: ['AlbumApi', function(AlbumApi) {
-              return AlbumApi.getAlbumList2('recent', 12);
+              return AlbumApi.getAlbumList('recent', 12);
             }],
             newest: ['AlbumApi', function(AlbumApi) {
-              return AlbumApi.getAlbumList2('newest', 5);
+              return AlbumApi.getAlbumList('newest', 5);
             }]
           },
           settings: {

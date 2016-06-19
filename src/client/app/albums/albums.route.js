@@ -32,7 +32,7 @@
           title: 'Albums',
           resolve: {
             albums: ['AlbumApi', function(AlbumApi) {
-              return AlbumApi.getAlbumList2('alphabeticalByName', 500);
+              return AlbumApi.getAlbumList('alphabeticalByName', 500);
             }]
           }
         }
@@ -45,9 +45,12 @@
           controller: 'AlbumDetailController',
           controllerAs: 'vm',
           title: 'Albums',
+          params: {
+            parentId: 'parentId'
+          },
           resolve: {
             album: ['AlbumApi', '$stateParams', function(AlbumApi, $stateParams) {
-              return AlbumApi.getAlbum($stateParams.albumId);
+              return AlbumApi.getMusicDirectory($stateParams.albumId);
             }]
           }
         }

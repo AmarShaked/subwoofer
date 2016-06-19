@@ -11,7 +11,7 @@
       </div>
       <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2" ng-repeat="album in vm.albums">
-          <album id="{{album.coverArt}}", size="300" artist="{{album.artist}}", title="{{album.name}}", albumid="{{album.id}}"></album>
+          <album id="{{album.coverArt}}", parentid={{album.parent}} size="300" artist="{{album.artist}}", title="{{album.title}}", albumid="{{album.id}}"></album>
         </div>
       </div>
     </div>

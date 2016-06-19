@@ -2,12 +2,41 @@
   <section class="matter">
     <div class="container">
       <div class="row page-header">
-				<img ssimg src="/images/base-cover-art.png" id="{{vm.album.coverArt}}" class="pull-left m-r" size="150">
-					<h3 class="text-orange">{{vm.album.name}}</h3>
-        	<h6>{{vm.album.artist}}</h6>
-        	<span class="label label-primary">{{vm.album.genre}}</span>
-        	<span class="label label-primary">{{vm.album.songCount}} songs</span>
-        	<span class="label label-primary">{{vm.album.year}}</span>
+				  <img ssimg src="/images/base-cover-art.png" id="{{vm.album.id}}" style="height: 150px" class="pull-left m-r" size="150">
+					<h3 class="text-orange">{{vm.directoryAlbum.title}}</h3>
+        	<h5>{{vm.directoryAlbum.artist}}</h5>
+        	<span class="label label-orange">{{vm.album.child.length}} songs</span>
+        	<span class="label label-orange">played {{vm.directoryAlbum.playCount}} times</span>
+      </div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <th>#</th>
+            <th>track</th>
+            <th>title</th>
+            <th>album</th>
+            <th>artist</th>
+            <th>duration</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="song in vm.album.child">
+              <td>
+                <div class="btn-toolbar" >
+                  <div class="btn-group btn-group-xs">
+                    <a><span class="p-rl-xs"><i class="fa fa-play"></i></span></a>
+                    <a><span class="p-rl-xs"><i class="fa fa-plus"></i></span></a>
+                    <a><span class="p-rl-xs"><i class="fa fa-star-o"></i></span></a>
+                  </div>
+                </div>
+              </td>
+              <td>{{song.track}}</td>
+              <td>{{song.title}}</td>
+              <td>{{song.album}}</td>
+              <td>{{song.artist}}</td>
+              <td>{{song.duration}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
