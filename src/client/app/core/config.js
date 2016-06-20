@@ -18,6 +18,14 @@
     apiVersion: '1.13.0'
   };
 
+  core.config(['$locationProvider', function($locationProvider) {
+      $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+      });
+    }
+  ]);
+
   core.value('config', config);
 
   core.config(['$httpProvider', function($httpProvider) {
