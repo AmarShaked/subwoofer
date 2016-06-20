@@ -10,7 +10,7 @@
       </div>
       <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2" ng-repeat="album in vm.recent">
-        	<album id="{{album.coverArt}}" parentid={{album.parent}} albumid="{{album.id}}" size="300" artist="{{album.artist}}" title="{{album.title}}"></album>
+        	<album id="{{album.coverArt || album.id}}" parentid={{album.parent}} albumid="{{album.id}}" size="300" artist="{{album.artist}}" title="{{album.title}}"></album>
         </div>
       </div>
       <div class="row">
@@ -31,7 +31,7 @@
             <li class="media" ng-repeat="album in vm.newest">
               <div class="media-left">
                 <a href="#">
-                  <img ssimg src="/images/base-cover-art.png" id="{{album.coverArt}}" size="70" style="height: 70px;">
+                  <img ssimg src="/images/base-cover-art.png" id="{{album.coverArt || album.id}}" size="70" style="height: 70px;">
                 </a>
               </div>
               <div class="media-body">

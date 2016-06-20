@@ -25,10 +25,10 @@
                         '&p=' + params.p +
                         '&c=' + params.c +
                         '&v=' + params.v +
-                        '&size=' + scope.size
+                        '&size=' + scope.size;
 
         element.on('load', function() {
-          element.attr('src', albumUrl)
+          element.attr('src', albumUrl);
         });
       }
     };

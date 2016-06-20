@@ -9,7 +9,7 @@
   /* @ngInject */
   function AlbumDetailController(AlbumApi, album, GeneralTasks) {
     var vm = this;
-    vm.album = album
+    vm.album = album;
     vm.parentAlbum = {};
 
     activate();
@@ -20,27 +20,25 @@
     }
 
     function getParentAlbum() {
-        AlbumApi.getMusicDirectory(album.parent).then(function(parent) {
-          vm.parentAlbum = parent;
-          getAlbumFromParent();
-          return parent;
-        })
+      AlbumApi.getMusicDirectory(album.parent).then(function(parent) {
+        vm.parentAlbum = parent;
+        getAlbumFromParent();
+        return parent;
+      });
     }
 
     function getAlbumFromParent() {
       angular.forEach(vm.parentAlbum.child, function(childAlbum) {
         if (childAlbum.id === album.id) {
           vm.directoryAlbum  = childAlbum;
-          console.log(vm.directoryAlbum)
-          console.log(vm.album)
         }
-      })
+      });
     }
 
     function replaceDurationFormat() {
       angular.forEach(album.child, function(song) {
-        song.duration = GeneralTasks.durationToTime(song.duration)
-      })
+        song.duration = GeneralTasks.durationToTime(song.duration);
+      });
     }
   }
 })();

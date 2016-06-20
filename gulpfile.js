@@ -209,7 +209,7 @@ gulp.task('build', ['optimize', 'images', 'fonts'], function() {
  * and inject them into the new index.html
  * @return {Stream}
  */
-gulp.task('optimize', ['inject', 'test'], function() {
+gulp.task('optimize', ['inject'], function() {
   log('Optimizing the js, css, and html');
 
   var assets = $.useref.assets({ searchPath: './' });
@@ -233,7 +233,7 @@ gulp.task('optimize', ['inject', 'test'], function() {
     .pipe(jsAppFilter)
     .pipe($.ngAnnotate({ add: true }))
     .pipe($.uglify())
-    .pipe(getHeader())
+    //.pipe(getHeader())
     .pipe(jsAppFilter.restore())
     // Get the vendor javascript
     .pipe(jslibFilter)
