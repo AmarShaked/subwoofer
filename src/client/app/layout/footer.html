@@ -1,19 +1,16 @@
 <div class="app-footer">
-	<videogular class="videogular-container audio">
-        <vg-media vg-src="vm.sources" vg-type="audio"></vg-media>
+    <div class="player">
+        <button ng-click="vm.player.paused ? vm.player.play() : vm.player.pause()">Pause</button>
+        <button ng-click="vm.player.restart()">Stop</button>
+        <button ng-click="vm.player.play()">Play</button>
 
-        <vg-controls>
-             <vg-button><i class="fa fa-backward"></i></vg-button>
-            <vg-play-pause-button></vg-play-pause-button>
-             <vg-button><i class="fa fa-forward"></i></vg-button>
-            <vg-scrub-bar>
-				<vg-title class="hidden-xs">אורות גבוהים</vg-title>
-                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-            </vg-scrub-bar>
-            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
-            <vg-volume>
-                <vg-mute-button></vg-mute-button>
-            </vg-volume>
-        </vg-controls>
-    </videogular>
+        <label>current time</label>
+        <span>{{vm.player.currentTime | trackTime}}</span>
+
+        <label>Volume</label>
+        <input class="" type="range" min=0 max=1 step=0.01 ng-model="vm.player.volume">
+
+        <label>Progress</label>
+        <input class="" type="range" min=0 max=1 step=0.01 ng-model="vm.player.progress">
+    </div>
 </div>

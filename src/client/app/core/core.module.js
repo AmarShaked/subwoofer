@@ -9,6 +9,7 @@
       'com.2fdevs.videogular',
       'com.2fdevs.videogular.plugins.controls',
       'com.2fdevs.videogular.plugins.buffering',
-      'angular-loading-bar'
+      'angular-loading-bar',
+      'ngAudio'
     ]);
 })();
