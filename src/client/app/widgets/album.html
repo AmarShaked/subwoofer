@@ -6,11 +6,11 @@
       </div>
     </div>
     <a ui-sref="music.detail" href="#/music/detail">
-      <img ssimg src="/images/base-cover-art.png" id="{{id}}", size="{{size}}" class="img-full">
+      <img ssimg src="/images/base-cover-art.png" id="{{::id}}", size="{{::size}}" class="img-full">
     </a>
   </div>
   <div class="padder">
-    <a ui-sref="albums.detail({albumId: albumid, parentId: parentid})" class="text-ellipsis" href="#/music/detail">{{title}}</a>
-    <a ui-sref="music.detail" class="text-ellipsis text-xs text-muted" href="#/music/detail">{{artist}}</a>
+    <a ui-sref="albums.detail({albumId: {{::albumid}}, parentId: parentid})" class="text-ellipsis" href="#/music/detail">{{::title}}</a>
+    <a ui-sref="music.detail" class="text-ellipsis text-xs text-muted" href="#/music/detail">{{::artist}}</a>
   </div>
 </div>

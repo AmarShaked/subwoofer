@@ -27,7 +27,7 @@
                         '&v=' + params.v +
                         '&size=' + scope.size;
 
-        element.on('load', function() {
+        element.one('load', function() {
           element.attr('src', albumUrl);
         });
       }
