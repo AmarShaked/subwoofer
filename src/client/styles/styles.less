@@ -836,9 +836,6 @@ form {
     z-index: 60;
 }
 
-.player {
-    padding: 10px;
-}
 
 
 /* Main */
@@ -1470,10 +1467,6 @@ textarea.form-control {
 
 .map {
     height: 228px;
-}
-
-.btn > i {
-    margin-right: 8px;
 }
 
 .btn {
@@ -2297,8 +2290,41 @@ videogular vg-scrub-bar-current-time, [videogular] vg-scrub-bar-current-time {
 }
 
 .player {
-    width: 50%;
-    margin: 0 auto;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.15);
 }
+
+.song-progress {
+    border: solid .5em transparent;
+}
+
+.progress {
+    height: 5px;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+}
+
+.progress-bar {
+    background-color: #c74b00;
+}
+
+.playlist {
+    text-align: center;
+    position: fixed;
+}
+
+.btn-player {
+    padding: 8px;
+    background-color: transparent;
+}
+
+.btn-player:hover {
+    color:  #c74b00;
+}
+
 
 /*# sourceMappingURL=main.css.map */

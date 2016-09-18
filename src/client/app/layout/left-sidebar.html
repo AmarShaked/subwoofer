@@ -1,8 +1,26 @@
 <div class="left-sidebar">
     <div class="left-sidebar-filler"></div>
-    <div class="sidebar-inner">
-      <div class="player padder">
-        <img src="http://samar.subsonic.org/rest/getCoverArt.view?id=1354&amp;u=shakedamar&amp;p=enc:5368616b656433363336&amp;c=subwoofer&amp;v=1.13.0&amp;size=300" class="img-full">
-      </div>
+
+    <div class="playlist">
+    	<img src="http://samar.subsonic.org/rest/getCoverArt.view?id=5191&u=shakedamar&p=enc:5368616b656433363336&c=subwoofer&v=1.13.0&size=150" class="img-full">
+    </div>
+    <div class="player">
+
+        <div class=""><uib-progressbar ng-click="vm.handleSkipClick($event)" animate="false" value="vm.player.progress * 100"></uib-progressbar></div>
+
+        <button class="btn btn-player">
+            <i class="fa fa-backward"></i>
+        </button>
+        <button class="btn btn-player" ng-click="vm.player.paused ? vm.player.play() : vm.player.pause()">
+            <i class="fa" ng-class="{'fa-play': vm.player.paused, 'fa-pause': !vm.player.paused}"></i>
+        </button>
+        <button class="btn btn-player">
+            <i class="fa fa-forward"></i>
+        </button>
+        <label>current time</label>
+        <span>{{vm.player.currentTime | trackTime}}</span>
+
+        <label>Volume</label>
+        <input class="" type="range" min=0 max=1 step=0.01 ng-model="vm.player.volume">
     </div>
 </div>

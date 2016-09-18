@@ -4,6 +4,7 @@
   angular
     .module('app.core', [
       'ngAnimate', 'ngSanitize',
+      'ui.bootstrap',
       'blocks.logger', 'blocks.router',
       'ui.router', 'ngplus', 'ngStorage',
       'com.2fdevs.videogular',
