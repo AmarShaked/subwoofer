@@ -2302,9 +2302,10 @@ videogular vg-scrub-bar-current-time, [videogular] vg-scrub-bar-current-time {
 
 .progress {
     height: 5px;
-    margin-top: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 0 5px 0!important;
+    /*margin-right: 0 !important;
     margin-left: 0 !important;
+    margin-left: 0 !important;*/
 
 }
 
@@ -2322,9 +2323,16 @@ videogular vg-scrub-bar-current-time, [videogular] vg-scrub-bar-current-time {
     background-color: transparent;
 }
 
-.btn-player:hover {
+.btn-player:hover, .btn-player:focus {
     color:  #c74b00;
 }
 
+.player-controls {
+    margin-bottom: 10px;
+}
+
+.player-adjust {
+
+}
 
 /*# sourceMappingURL=main.css.map */

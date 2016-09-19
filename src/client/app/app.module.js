@@ -10,6 +10,7 @@
     'app.subsonic',
     'app.login',
     'app.albums',
+    'app.player',
     'app.utils'
   ]);
 

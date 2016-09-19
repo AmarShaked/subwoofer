@@ -5,9 +5,9 @@
     .module('app.home')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['AlbumApi', 'recent', 'newest', 'cfpLoadingBar', 'ngAudio'];
+  HomeController.$inject = ['AlbumApi', 'recent', 'newest', 'swPlayer'];
   /* @ngInject */
-  function HomeController(AlbumApi, recent, newest, cfpLoadingBar, ngAudio) {
+  function HomeController(AlbumApi, recent, newest, swPlayer) {
     var vm = this;
 
     activate();
@@ -15,8 +15,8 @@
     vm.recent = recent;
     vm.nowPlaying = [];
     vm.newest = newest;
+    vm.player = swPlayer;
 
-    vm.sound = ngAudio.load("http://10.0.0.8:5310/rest/stream.view?c=subwoofer&id=3959&p=enc:5368616b656433363336&u=shakedamar&v=1.13.0")
 
     function activate() {
       getNowPlaying();
