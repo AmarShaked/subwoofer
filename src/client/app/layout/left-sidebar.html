@@ -3,7 +3,11 @@
 
     <div class="playlist">
         <img  ng-src="{{vm.album.coverArt}}">
+        <ul>
+        	<li ng-repeat="child in vm.album.child">{{child.title}}</li>
+        </ul>
     </div>
+
     <div class="player">
 
         <uib-progressbar ng-click="vm.handleSkipClick($event)" animate="false" value="vm.player.progress * 100"></uib-progressbar>
