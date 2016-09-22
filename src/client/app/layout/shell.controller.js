@@ -12,7 +12,6 @@
 
     vm.navline = {
       title: config.appTitle,
-      username: LoginHelper.getUser(),
       avatar: ssHttp.objectAsUrl({url: '/getUser.view'})
     };
 

@@ -17,7 +17,6 @@
       login: login,
       isAuthenticated: isAuthenticated,
       destroySession: destroySession,
-      getUser: getUser
     };
 
     function login(username, password, site) {
@@ -46,10 +45,6 @@
       }
 
       return result;
-    }
-
-    function getUser() {
-      return $localStorage.subsonicParams.u;
     }
 
     function isAuthenticated() {
