@@ -17,7 +17,6 @@
     vm.newest = newest;
     vm.player = swPlayer;
 
-
     function activate() {
       getNowPlaying();
     }

@@ -12,9 +12,8 @@
     vm.handleSkipClick = handleSkipClick;
     vm.album = swPlayer.getAlbum();
 
-
     swPlayer.subscribe($scope, handleAlbumChangedEvent, PlayerEvents.albumChanged);
-
+    swPlayer.subscribe($scope, handleSongChangedEvent, PlayerEvents.songChanged);
 
     vm.navline = {
       title: config.appTitle,
@@ -34,14 +33,19 @@
       console.log("AlbumChanged")
     }
 
+    function handleSongChangedEvent() {
+      vm.sources = swPlayer.getSources();
+      vm.currentSong = swPlayer.getCurrentSong();
+    }
+
     function handleSkipClick(e) {
       var fullWidth = $(e.currentTarget).width();
       var position = e.offsetX / fullWidth;
 
       console.log(position)
-      console.log(vm.player.progress)
+      console.log(vm.currentSong.progress)
 
-      vm.player.progress = position;
+      vm.currentSong.progress = position;
     }
 
     vm.sources = [];

@@ -3,7 +3,8 @@
 
 
     var PlayerEvents = {
-    	albumChanged: 'ALBUM_CHANGED'
+    	albumChanged: 'ALBUM_CHANGED',
+    	songChanged: 'SONG_CHANGED'
     }
 
   angular

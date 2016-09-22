@@ -2140,30 +2140,25 @@ videogular vg-controls{
   bottom: 0;
 }
 
-videogular vg-video{
-  font-size: 0;
-  height: auto !important;
-}
-
 videogular vg-poster-image img{
   width: 100% !important;
 }
 
 videogular.audio .iconButton,
-videogular.audio vg-timedisplay {
+videogular.audio vg-time-display {
   color: inherit !important;
 }
 
-videogular vg-timedisplay{
+videogular vg-time-display{
   font-family: inherit !important;
   font-size: inherit !important;
 }
 
-videogular vg-scrubbar > div{
+videogular vg-scrub-bar > div {
   position: relative;
 }
 
-videogular vg-title{
+videogular vg-title {
   position: absolute;
   width: 100%;
   line-height: 50px;
@@ -2183,8 +2178,12 @@ videogular .iconButton:focus {
 }
 
 
-.videogular-container.audio{
+.videogular-container.audio {
   height: 50px;
+}
+
+.videogular-container {
+    background-color: #000;
 }
 
 
@@ -2209,68 +2208,6 @@ videogular .iconButton:focus {
 .padder {
     padding-top: 15px;
     padding-bottom: 15px;
-}
-
-
-.videogular-container {
-    width: 100%;
-    height: 320px;
-    margin: auto;
-    overflow: hidden;
-}
-
-@media (min-width: 1200px) {
-    .videogular-container {
-        width: 600px;
-        height: 658.125px;
-    }
-
-    .videogular-container.audio {
-        width: 600px;
-        height: 50px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .videogular-container {
-        width: 940px;
-        height: 528.75px;
-    }
-
-    .videogular-container.audio {
-        width: 940px;
-        height: 50px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .videogular-container {
-        width: 728px;
-        height: 409.5px;
-    }
-
-    .videogular-container.audio {
-        width: 728px;
-        height: 50px;
-    }
-}
-
-videogular vg-scrub-bar, [videogular] vg-scrub-bar {
-    display: block;
-}
-
-videogular vg-scrub-bar [role=slider] {
-    margin-top: 0;
-    height: 4px;
-}
-
-videogular vg-scrub-bar .container, [videogular] vg-scrub-bar .container {
-    top: 0;
-    height: 4px;
-}
-
-videogular vg-scrub-bar-current-time, [videogular] vg-scrub-bar-current-time {
-    background-color: #F58A00
 }
 
 #loading-bar .bar {
@@ -2331,8 +2268,23 @@ videogular vg-scrub-bar-current-time, [videogular] vg-scrub-bar-current-time {
     margin-bottom: 10px;
 }
 
-.player-adjust {
+videogular vg-scrub-bar .container, [videogular] vg-scrub-bar .container {
+    top: 0 !important;
+    color: #c74b00
+}
 
+videogular vg-scrub-bar [role=slider], [videogular] vg-scrub-bar [role=slider] {
+    height: 0px !important;
+}
+
+li.media {
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 0;
+}
+
+li.media:hover {
+    border: 1px solid #c74b00;
 }
 
 /*# sourceMappingURL=main.css.map */
