@@ -2251,8 +2251,9 @@ videogular .iconButton:focus {
 }
 
 .playlist {
-    text-align: center;
     position: fixed;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .btn-player {
@@ -2283,7 +2284,7 @@ li.media {
     margin-bottom: 0;
 }
 
-li.media:hover {
+li.media:hover, li.media.active {
     border: 1px solid #c74b00;
 }
 

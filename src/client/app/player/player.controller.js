@@ -41,6 +41,7 @@
       vm.API.stop();
       vm.config.sources = vm.audios[0].sources;
       vm.config.title = vm.audios[0].title;      
+      vm.config.nowPlaying = vm.audios[0].id;
     }
 
     function onPlayerReady(API) {
@@ -94,6 +95,7 @@
       vm.API.stop();
       vm.config.sources = vm.audios[index].sources;
       vm.config.title = vm.audios[index].title;
+      vm.config.nowPlaying = vm.audios[index].id;
     };
 
     function toggleRepeat() {

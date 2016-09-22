@@ -43,6 +43,7 @@
       var serializeAlbum = []
       angular.forEach(currentAlbum.child, function(child) {
         var song = {
+          id: child.id,
           title: child.title,
           artist: child.artist,
           coverArt: AlbumApi.getAlbumCoverUrl(child.id, 50),
