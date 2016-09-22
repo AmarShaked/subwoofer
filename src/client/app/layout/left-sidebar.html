@@ -3,7 +3,9 @@
 
     <div class="playlist">
         <ul class="media-list">
-        	<li class="media" ng-repeat="song in vm.audios" ng-click="vm.setActive($index)">
+        	<li class="media" ng-repeat="song in vm.audios" 
+                              ng-click="vm.setActive($index)" 
+                              ng-class="{'active': song.id === vm.config.nowPlaying}">
               <div class="media-left media-middle">
                   <img class="media-object" ng-src="{{song.coverArt}}" alt="Generic placeholder image">
               </div>
