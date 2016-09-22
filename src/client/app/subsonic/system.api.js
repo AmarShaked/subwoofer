@@ -14,7 +14,7 @@
 
     function ping() {
 
-      return ssHttp({method: 'GET', url: '/ping.view'})
+      return ssHttp.fetch({method: 'GET', url: '/ping.view'})
         .then(success);
 
       function success(response) {
