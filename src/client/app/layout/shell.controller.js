@@ -10,6 +10,8 @@
   function ShellController(ssHttp, config, LoginHelper) {
     var vm = this;
 
+    vm.toggleMenu = false;
+
     vm.navline = {
       title: config.appTitle,
       avatar: ssHttp.objectAsUrl({url: '/getUser.view'})

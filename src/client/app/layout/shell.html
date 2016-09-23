@@ -2,14 +2,13 @@
   <header ng-if="isConnected" class="clearfix">
     <div ng-if="isConnected" ng-include="'app/layout/header.html'"></div>
   </header>
-  <div ng-controller="PlayerController as vm">
-    <section id="content" class="content">
+  <div>
+    <div id="wrapper" class="wrapper" ng-class="{'toggled': vm.toggleMenu}">
       <div ng-if="isConnected" ng-include="'app/layout/sidebar.html'"></div>
-      <div ng-if="isConnected" ng-include="'app/layout/left-sidebar.html'"></div>
-      <div ui-view class="shuffle-animation"></div>
-    </section>
-    <footer ng-if="isConnected" ng-include="'app/layout/footer.html'">
-
-    </footer>
+      <div id="page-content-wrapper" class="shuffle-animation">
+        <div ui-view class="container-fluid"></div>
+      </div>
+    </div>
+    <footer ng-if="isConnected" ng-include="'app/layout/footer.html'"></footer>
   </div>
 </div>

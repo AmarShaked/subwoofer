@@ -1,10 +1,10 @@
-<div class="app-footer">
+<div class="app-footer" ng-controller="PlayerController as vm">
     <div class="videogular-container">
       <videogular
-        vg-theme="vm.config.theme.url"  
-        vg-player-ready="vm.onPlayerReady($API)" 
-        vg-complete="vm.onComplete()" 
-        vg-auto-play="vm.config.autoPlay" 
+        vg-theme="vm.config.theme.url"
+        vg-player-ready="vm.onPlayerReady($API)"
+        vg-complete="vm.onComplete()"
+        vg-auto-play="vm.config.autoPlay"
         class="videogular-container audio">
         <vg-media vg-src="vm.config.sources"></vg-media>
         <vg-controls>
@@ -17,7 +17,7 @@
             <vg-scrub-bar-current-time class="bg-info" style="height: 4px"></vg-scrub-bar-current-time>
           </vg-scrub-bar>
           <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-           
+
           <vg-button ng-click="vm.toggleShuffle()" title="Shuffle"><i class="fa fa-random" ng-class="{'text-info':vm.config.shuffle}"></i></vg-button>
           <vg-button ng-click="vm.toggleRepeat()" title="Repeat"><i class="fa fa-retweet" ng-class="{'text-info':vm.config.repeat}"></i></vg-button>
 
