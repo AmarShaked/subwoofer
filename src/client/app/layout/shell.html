@@ -1,6 +1,6 @@
 <div ng-controller="ShellController as vm">
   <header ng-if="isConnected" class="clearfix">
-    <ht-top-nav navline="vm.navline"></ht-top-nav>
+    <div ng-if="isConnected" ng-include="'app/layout/header.html'"></div>
   </header>
   <div ng-controller="PlayerController as vm">
     <section id="content" class="content">
@@ -9,7 +9,7 @@
       <div ui-view class="shuffle-animation"></div>
     </section>
     <footer ng-if="isConnected" ng-include="'app/layout/footer.html'">
-    	
+
     </footer>
   </div>
 </div>
