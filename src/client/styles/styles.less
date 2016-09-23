@@ -1,4 +1,5 @@
 @color_orange: #F57C00;
+@color_orange_light: #FFA726;
 @color_black: rgba(0, 0, 0, 0.87);
 @color_darker: rgba(0, 0, 0, 0.15);
 
@@ -20,7 +21,11 @@ label {
 
 .logo {
   font-size: 80px;
-  color: @color_orange;
+  color: @color_orange_light;
+}
+
+.logo strong {
+    color: @color_orange;
 }
 
 .form-control {
@@ -51,4 +56,10 @@ label {
 
 .login-form {
   margin-top: 70px;
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 40px;
+    }
 }
