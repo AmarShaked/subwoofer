@@ -15,15 +15,6 @@
     <div class="page-header">
       <h3 class="text-orange">Recently added</h3>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="page-header">
-      <h3 class="text-orange">Now playing</h3>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
     <ul class="media-list">
       <li class="media" ng-repeat="album in ::vm.newest track by album.id">
         <div class="media-left">
@@ -39,6 +30,9 @@
     </ul>
   </div>
   <div class="col-md-6">
+    <div class="page-header">
+      <h3 class="text-orange">Now playing</h3>
+    </div>
     <ul class="media-list">
       <li class="media" ng-repeat="np in vm.nowPlaying">
         <div class="media-left">
