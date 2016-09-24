@@ -10,6 +10,24 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <li ng-if="vm.audios.length > 0">
+            <div class="btn-group btn-header" uib-dropdown auto-close="outsideClick">
+              <button id="single-button" type="button" class="btn btn-orange" uib-dropdown-toggle ng-disabled="disabled">
+                <i class="fa fa-music"></i></span>
+              </button>
+              <ul class="dropdown-menu playlist" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li role="menuitem" class="media" ng-class="{'active': song.id === vm.config.nowPlaying}" ng-repeat="song in vm.audios" ng-click="vm.setActive($index)">
+                  <div class="media-left media-middle">
+                      <img class="media-object" ng-src="{{song.coverArt}}" alt="Generic placeholder image">
+                  </div>
+                  <div class="media-body">
+                    <h6 class="media-heading">{{song.title}}</h6>
+                    <p>{{song.artist}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </li>
         <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
         <li ng-click="vm.toggleMenu = !vm.toggleMenu"><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
       </ul>

@@ -3,12 +3,12 @@
     <div ng-if="isConnected" ng-include="'app/layout/header.html'"></div>
   </header>
   <div>
-    <div id="wrapper" class="wrapper" ng-class="{'toggled': vm.toggleMenu}">
+    <div id="wrapper" class="wrapper" ng-class="{'toggled': vm.toggleMenu && isConnected}">
       <div ng-if="isConnected" ng-include="'app/layout/sidebar.html'"></div>
       <div id="page-content-wrapper" class="shuffle-animation">
         <div ui-view class="container-fluid"></div>
       </div>
     </div>
-    <footer ng-if="isConnected" ng-include="'app/layout/footer.html'"></footer>
+    <footer ng-if="isConnected" ng-include="'app/layout/player.html'"></footer>
   </div>
 </div>
