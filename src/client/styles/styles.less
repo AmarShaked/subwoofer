@@ -13,6 +13,14 @@ body {
     overflow-x: hidden;
 }
 
+a {
+  color: @color_orange_light;
+}
+a:hover {
+  color: @color_orange;
+  text-decoration: none;
+}
+
 label {
     font-weight: 400;
     color: #999;
@@ -51,6 +59,10 @@ label {
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 167, 38, .6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 167, 38, .6);
+}
+
+.text-orange {
+  color: @color_orange;
 }
 
 .btn-orange {
@@ -227,6 +239,86 @@ label {
     }
 }
 /* End Sidebar Styles */
+
+.page-header {
+  font-weight: 100;
+  font-size: 36px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #282828;
+  min-height: 96px;
+  position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Album Styles */
+.padder {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.album {
+    position: relative;
+}
+
+.bg-black-opacity {
+    background-color: rgba(32,43,54,.5);
+}
+
+.album .center {
+    top: 50%;
+    margin-top: -15px;
+}
+
+.album .center, .album-overlay {
+    position: absolute;
+}
+
+.album-overlay.active, .album:hover .album-overlay {
+    display: block;
+}
+
+.img-full, .img-full img {
+    width: 100%;
+}
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+}
+
+a.album-text {
+  display: block;
+}
+
+.album-text {
+  display: block;
+}
+
+.album-overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+.pos-rlt {
+    position: relative;
+}
+
+.w-full {
+    width: 100%;
+}
+/* End Album styles */
 
 @media (max-width: 480px) {
     .logo {

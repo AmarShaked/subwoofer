@@ -1,8 +1,8 @@
-<div class="item">
+<div class="album">
   <div class="pos-rlt">
-    <div class="item-overlay bg-black-opacity r r-2x">
-      <div class="center text-center m-t-n w-full">
-        <a><i class="fa fa-2x fa-play text-white"></i></a>
+    <div class="album-overlay bg-black-opacity r r-2x">
+      <div class="center text-center w-full">
+        <a><i class="fa fa-2x fa-play text-orange"></i></a>
       </div>
     </div>
     <a ui-sref="music.detail" href="#/music/detail">
@@ -10,7 +10,7 @@
     </a>
   </div>
   <div class="padder">
-    <a ui-sref="albums.detail({albumId: {{::albumid}}, parentId: parentid})" class="text-ellipsis" href="#/music/detail">{{::title}}</a>
-    <a ui-sref="music.detail" class="text-ellipsis text-xs text-muted" href="#/music/detail">{{::artist}}</a>
+    <a ui-sref="albums.detail({albumId: {{::albumid}}, parentId: parentid})" class="album-text text-ellipsis" href="#/music/detail">{{::title}}</a>
+    <a ui-sref="music.detail" class="album-text text-ellipsis text-muted" href="#/music/detail">{{::artist}}</a>
   </div>
 </div>
