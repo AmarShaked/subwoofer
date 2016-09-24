@@ -320,6 +320,99 @@ a.album-text {
 }
 /* End Album styles */
 
+/* Audio player */
+videogular,
+videogular.audio vg-controls #controls-container{
+  background-color: inherit !important;
+}
+videogular vg-controls #controls-container{
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+videogular vg-controls{
+  top: auto !important;
+  bottom: 0;
+}
+
+videogular vg-poster-image img{
+  width: 100% !important;
+}
+
+videogular.audio .iconButton,
+videogular.audio vg-time-display {
+  color: inherit !important;
+}
+
+videogular vg-time-display{
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+
+videogular vg-scrub-bar > div {
+  position: relative;
+}
+
+videogular vg-title {
+  position: absolute;
+  width: 100%;
+  line-height: 50px;
+  padding: 0 10px;
+}
+
+videogular vg-button{
+  display: table-cell;
+  width: 50px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+videogular .iconButton:focus {
+  border-width: 0 !important;
+}
+
+
+.videogular-container.audio {
+  height: 50px;
+}
+
+.videogular-container {
+    background-color: #000;
+}
+
+.app-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+}
+
+.song-progress {
+    border: solid .5em transparent;
+}
+
+.progress {
+    height: 5px;
+    margin: 0 0 5px 0!important;
+}
+
+.progress-bar {
+    background-color: #c74b00;
+}
+
+videogular vg-scrub-bar .container, [videogular] vg-scrub-bar .container {
+    top: 0 !important;
+    color: #c74b00
+}
+
+videogular vg-scrub-bar [role=slider], [videogular] vg-scrub-bar [role=slider] {
+    height: 0px !important;
+}
+/* End Audio player */
+
+
 @media (max-width: 480px) {
     .logo {
         font-size: 40px;
