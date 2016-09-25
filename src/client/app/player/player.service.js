@@ -5,9 +5,9 @@
     .module('app.player')
     .service('swPlayer', swPlayer);
 
-  swPlayer.$inject = ['AlbumApi', '$rootScope', 'PlayerEvents', 'ngAudio', 'ssHttp', '$sce'];
+  swPlayer.$inject = ['AlbumApi', '$rootScope', 'PlayerEvents', 'ssHttp', '$sce'];
   /* @ngInject */
-  function swPlayer(AlbumApi, $rootScope, PlayerEvents, ngAudio, ssHttp, $sce) {
+  function swPlayer(AlbumApi, $rootScope, PlayerEvents, ssHttp, $sce) {
 
     var currentAlbum;
     var currentSong;
@@ -48,10 +48,10 @@
           artist: child.artist,
           coverArt: AlbumApi.getAlbumCoverUrl(child.id, 50),
           sources: [
-            {src: $sce.trustAsResourceUrl(ssHttp.objectAsUrl({url: '/stream.view', 
-                                                              params: {id: child.id}})), 
+            {src: $sce.trustAsResourceUrl(ssHttp.objectAsUrl({url: '/stream.view',
+                                                              params: {id: child.id}})),
              type: "audio/mpeg"}
-          ] 
+          ]
         }
 
         serializeAlbum.push(song)
